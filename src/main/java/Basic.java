@@ -2,16 +2,21 @@ package main.java;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import main.java.files.Payload;
+// import main.java.files.Payload;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
 import static java.lang.System.*;
+// import static org.apache.commons.codec.digest.UnixCrypt.body;
 import static org.hamcrest.Matchers.equalTo;
 import static org.testng.Assert.assertEquals;
 
 public class Basic {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         /*
          TO DO Auto-generated method stub
          validate if Add place API is working as expected
@@ -28,8 +33,7 @@ public class Basic {
         String response = given().log().all()
                 .queryParam("key", "qaclick123")
                 .header("Content-Type", "application/json")
-                .body(Payload.addPlace())
-                // body(new String(Files.readAllBytes(Paths.get("C:\\Users\\Documents\\name.json")))) - это, чтобы получить данные из файла
+                .body(new String(Files.readAllBytes(Paths.get("C:\\Users\\Documents\\name.json")))) // это, чтобы получить данные из файла
                 .when().post("/maps/api/place/add/json")
                 .then()
                 .assertThat()
