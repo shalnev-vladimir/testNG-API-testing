@@ -29,7 +29,7 @@ public class Basic {
                 .queryParam("key", "qaclick123")
                 .header("Content-Type", "application/json")
                 .body(Payload.addPlace())
-                // body(new String(Files.readAllBytes(Paths.get("C:\\Users\\Documents\\name.json")))) - это, чтобы получить данные из файла
+                // body(new String(Files.readAllBytes(Paths.get("C:\\Users\\Documents\\name.json")))) - это, чтобы получить данные из файла!
                 .when().post("/maps/api/place/add/json")
                 .then()
                 .assertThat()
