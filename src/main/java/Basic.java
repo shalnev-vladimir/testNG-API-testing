@@ -21,7 +21,7 @@ public class Basic {
          given - all input details
          when - submit the API - resource, http method
          then - validate the response
-         content of the file to String -> content of the file can convert into Byte -> Byte data to String!
+         content of the file to String -> content of the file can convert into Byte -> Byte data to String
         */
 
         RestAssured.baseURI = "https://rahulshettyacademy.com";
